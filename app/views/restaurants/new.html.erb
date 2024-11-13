@@ -1,0 +1,10 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Choose a category" %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to("Add a review", new_restaurant_review_path(@restaurant)) %>
+<%= link_to("All restaurants", restaurants_path) %>
